@@ -1,0 +1,1265 @@
+[
+    {
+        "id": "97d477c7a162193f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8287941ff8a40d9a",
+        "type": "group",
+        "z": "97d477c7a162193f",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "0d1a81cf7d5126d7",
+            "cfbe0cb14f296412",
+            "c958d4e425ac0bb9",
+            "970772522fc1cb48",
+            "94bc25cf07e9a534",
+            "546fd44e5ff21a7a"
+        ],
+        "x": 134,
+        "y": 471.5,
+        "w": 1112,
+        "h": 169.5
+    },
+    {
+        "id": "2b060c409377ea39",
+        "type": "group",
+        "z": "97d477c7a162193f",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "af2a4d8ec909093e",
+            "fbbbe546e82c45e0",
+            "b34ab389e6038c4d",
+            "3b794fd4c54ce12a",
+            "28b7edd24a7c88e1",
+            "a1d59403c0722a78",
+            "e4810e27bd4a9ba9",
+            "e046eb3387e6f42b",
+            "dca7b386f14c82fe",
+            "33bff03752bf7804",
+            "999d97aa03581558",
+            "7c8f8b2927a725ab",
+            "572d0baef7460c3f",
+            "064816db606638a6",
+            "03a231de7a60dc13"
+        ],
+        "x": 134,
+        "y": 679,
+        "w": 1152,
+        "h": 442
+    },
+    {
+        "id": "4a604a18f3c96a55",
+        "type": "group",
+        "z": "97d477c7a162193f",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "8b4352ecc9a4b83d",
+            "6b71bc11d348fa69",
+            "4e4ff0723b4d6d8a",
+            "7f1dcd92858f1e7c",
+            "98c63eae8d3d2436",
+            "d9236a1c3bc33cba",
+            "c464c11386574442",
+            "d641808f1d80b761",
+            "fa9e0c913e083c2f",
+            "3f399f492c7c303d",
+            "90c945cc2cf8241f",
+            "1cedbab127e924a6",
+            "f9ce8982d73d446e",
+            "5ae9b66f19b136a0",
+            "5a908f0ce2280f1a"
+        ],
+        "x": 134,
+        "y": 39,
+        "w": 1472,
+        "h": 402
+    },
+    {
+        "id": "af2a4d8ec909093e",
+        "type": "serial in",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "ARM23",
+        "serial": "2bcfd047bffa8532",
+        "x": 230,
+        "y": 780,
+        "wires": [
+            [
+                "b34ab389e6038c4d"
+            ]
+        ]
+    },
+    {
+        "id": "fbbbe546e82c45e0",
+        "type": "file",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "CSV",
+        "filename": "C:\\Users\\giaco\\OneDrive\\Desktop\\PCTO\\data.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 1150,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b34ab389e6038c4d",
+        "type": "json",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Data_json",
+        "property": "payload",
+        "action": "",
+        "pretty": true,
+        "x": 480,
+        "y": 780,
+        "wires": [
+            [
+                "3b794fd4c54ce12a",
+                "dca7b386f14c82fe"
+            ]
+        ]
+    },
+    {
+        "id": "3b794fd4c54ce12a",
+        "type": "csv",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Data_csv",
+        "sep": ";",
+        "hdrin": false,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "Dito,BPM,SpO2,Umidita_stanza,Temperatura_stanza,Indice_calore,HRV,Cod_Utente",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 700,
+        "y": 780,
+        "wires": [
+            [
+                "e4810e27bd4a9ba9"
+            ]
+        ]
+    },
+    {
+        "id": "28b7edd24a7c88e1",
+        "type": "inject",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Cancella dati CSV",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Dito;BPM,SpO2;Umidita_stanza;Temperatura_stanza;Indice_calore;HRV;Cod_Utente",
+        "payloadType": "str",
+        "x": 270,
+        "y": 720,
+        "wires": [
+            [
+                "fbbbe546e82c45e0"
+            ]
+        ]
+    },
+    {
+        "id": "a1d59403c0722a78",
+        "type": "mysql",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "mydb": "d62b411c865605bd",
+        "name": "DB_PCTO",
+        "x": 1170,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4810e27bd4a9ba9",
+        "type": "change",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": ".",
+                "fromt": "str",
+                "to": ",",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 780,
+        "wires": [
+            [
+                "fbbbe546e82c45e0"
+            ]
+        ]
+    },
+    {
+        "id": "8b4352ecc9a4b83d",
+        "type": "mysql",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "mydb": "d62b411c865605bd",
+        "name": "DB_PCTO",
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "4e4ff0723b4d6d8a"
+            ]
+        ]
+    },
+    {
+        "id": "6b71bc11d348fa69",
+        "type": "inject",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Vedi tabella Info",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "SELECT * FROM Info;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 140,
+        "wires": [
+            [
+                "8b4352ecc9a4b83d"
+            ]
+        ]
+    },
+    {
+        "id": "4e4ff0723b4d6d8a",
+        "type": "debug",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Debug select database",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7f1dcd92858f1e7c",
+        "type": "inject",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Reset database",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE FROM Info;",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "8b4352ecc9a4b83d"
+            ]
+        ]
+    },
+    {
+        "id": "e046eb3387e6f42b",
+        "type": "debug",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Debug data",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "98c63eae8d3d2436",
+        "type": "ui_form",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Inserisci utente",
+        "label": "",
+        "group": "1a72a9e6cff72716",
+        "order": 2,
+        "width": 10,
+        "height": 1,
+        "options": [
+            {
+                "label": "Nome",
+                "value": "Nome",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Cognome",
+                "value": "Cognome",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Data di nascita",
+                "value": "Data",
+                "type": "date",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Nome": "",
+            "Cognome": "",
+            "Data": ""
+        },
+        "payload": "",
+        "submit": "Inserisci",
+        "cancel": "Cancella",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 260,
+        "y": 200,
+        "wires": [
+            [
+                "90c945cc2cf8241f"
+            ]
+        ]
+    },
+    {
+        "id": "dca7b386f14c82fe",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Da JSON a query",
+        "func": "msg.payload[\"Valori_0\"] = false;\nlet data = msg.payload;\nlet utente = global.get('utente');\nlet valori = global.get('ultimi_5_valori');\n\nfunction media(key){\n    let somma = 0;\n    for (let i = 0; i < 5; i++){\n        if (isNaN(valori[i][key])) {\n            return 0;\n        }\n        somma += valori[i][key];\n    }\n    let media_elementi = somma/5;\n    msg.payload[\"Valori_0\"] = true;\n    return media_elementi;\n}\n\nif (data[\"Finger\"] == true){\n    if (data[\"BPM\"] < 10)\n        data[\"BPM\"] = media(\"BPM\");\n\n    if (data[\"SpO2\"] < 10)\n        data[\"SpO2\"] = media(\"SpO2\");\n\n    if (data[\"HRV\"] == 0)\n        data[\"HRV\"] = media(\"HRV\");\n    \n    let today = new Date();\n    let date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()} ${today.getHours()}-${today.getMinutes()}-${today.getSeconds()}`;\n\n    msg.topic = `INSERT INTO Info(Dito,BPM,SpO2,Umidita_stanza,Temperatura_stanza,Indice_calore,HRV,Ora_misurazione,Cod_Utente) \n                VALUES (${data[\"Finger\"]},${data[\"BPM\"]},${data[\"SpO2\"]},${data[\"Humidity\"]},${data[\"Temperature\"]},${data[\"Heat_index\"]},${data[\"HRV\"]},\"${date}\",${utente})`;\n\n    for (let i = 1; i < 5; i++){\n        valori[i-1] = valori[i];\n    }\n    valori[4] = { \"BPM\": data[\"BPM\"], \"SpO2\": data[\"SpO2\"], \"HRV\": data[\"HRV\"], \"Humidity\": data[\"Humidity\"], \"Temperature\": data[\"Temperature\"], \"Heat_index\": data[\"Heat_index\"] };\n    global.set('ultimi_5_valori', valori);\n\n    \n    return msg;\n}\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nglobal.set('utente', 1);\nglobal.set('ultimi_5_valori', [{\"BPM\": 0, \"SpO2\": 0, \"HRV\": 0, \"Umidita\": 0, \"Temperatura\": 0, \"Indice_calore\": 0},\n    { \"BPM\": 0, \"SpO2\": 0, \"HRV\": 0, \"Umidita\": 0, \"Temperatura\": 0, \"Indice_calore\": 0 }, \n    { \"BPM\": 0, \"SpO2\": 0, \"HRV\": 0, \"Umidita\": 0, \"Temperatura\": 0, \"Indice_calore\": 0 },\n    { \"BPM\": 0, \"SpO2\": 0, \"HRV\": 0, \"Umidita\": 0, \"Temperatura\": 0, \"Indice_calore\": 0 },\n    { \"BPM\": 0, \"SpO2\": 0, \"HRV\": 0, \"Umidita\": 0, \"Temperatura\": 0, \"Indice_calore\": 0 }])",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 860,
+        "wires": [
+            [
+                "e046eb3387e6f42b",
+                "a1d59403c0722a78",
+                "999d97aa03581558"
+            ]
+        ]
+    },
+    {
+        "id": "d9236a1c3bc33cba",
+        "type": "ui_dropdown",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Utenti",
+        "label": "Utenti",
+        "tooltip": "",
+        "place": "",
+        "group": "5565465bf4a48846",
+        "order": 2,
+        "width": 9,
+        "height": 1,
+        "passthru": true,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 1290,
+        "y": 340,
+        "wires": [
+            [
+                "fa9e0c913e083c2f"
+            ]
+        ]
+    },
+    {
+        "id": "c464c11386574442",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Carica nomi dropdown",
+        "func": "global.set('nomi_utenti', msg.payload);\nlet utenti = msg.payload;\n\nmsg.options = [];\n\nfor (let i = 0; i < utenti.length; i++){\n    let valore = {};\n    valore[`${utenti[i][\"Nome\"]} ${utenti[i][\"Cognome\"]}`] = utenti[i][\"ID_Utente\"];\n\n    msg.options.push(valore); \n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "d9236a1c3bc33cba"
+            ]
+        ]
+    },
+    {
+        "id": "d641808f1d80b761",
+        "type": "mysql",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "mydb": "d62b411c865605bd",
+        "name": "DB_PCTO",
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "c464c11386574442",
+                "f9ce8982d73d446e"
+            ]
+        ]
+    },
+    {
+        "id": "fa9e0c913e083c2f",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Cambia utente",
+        "func": "global.set('utente', msg.payload);",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1500,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f399f492c7c303d",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Query",
+        "func": "msg.topic = \"SELECT ID_Utente, Nome, Cognome FROM Utente\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 340,
+        "wires": [
+            [
+                "d641808f1d80b761"
+            ]
+        ]
+    },
+    {
+        "id": "90c945cc2cf8241f",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Query",
+        "func": "let data = new Date(msg.payload[\"Data\"]);\ndata.setDate(data.getDate() + 1);\nlet nascita = data.toISOString();\nmsg.payload[\"Data\"] = nascita;\n\nmsg.topic = `INSERT INTO Utente(Nome,Cognome,Data_nascita) \n                VALUES (\"${msg.payload[\"Nome\"]}\",\"${msg.payload[\"Cognome\"]}\",\"${nascita.slice(0,10)}\")`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 200,
+        "wires": [
+            [
+                "5a908f0ce2280f1a"
+            ]
+        ]
+    },
+    {
+        "id": "1cedbab127e924a6",
+        "type": "ui_button",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Aggiorna dropdown",
+        "group": "5565465bf4a48846",
+        "order": 6,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Aggiorna",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 270,
+        "y": 340,
+        "wires": [
+            [
+                "3f399f492c7c303d"
+            ]
+        ]
+    },
+    {
+        "id": "f9ce8982d73d446e",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Imposta utente selezionato",
+        "func": "msg.payload = global.get('utente');\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 400,
+        "wires": [
+            [
+                "d9236a1c3bc33cba"
+            ]
+        ]
+    },
+    {
+        "id": "5ae9b66f19b136a0",
+        "type": "inject",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "name": "Aggiorna dropdown",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "3f399f492c7c303d"
+            ]
+        ]
+    },
+    {
+        "id": "5a908f0ce2280f1a",
+        "type": "mysql",
+        "z": "97d477c7a162193f",
+        "g": "4a604a18f3c96a55",
+        "mydb": "d62b411c865605bd",
+        "name": "DB_PCTO",
+        "x": 710,
+        "y": 200,
+        "wires": [
+            [
+                "3f399f492c7c303d",
+                "4e4ff0723b4d6d8a"
+            ]
+        ]
+    },
+    {
+        "id": "33bff03752bf7804",
+        "type": "ui_chart",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Grafico",
+        "group": "2b2774b436b5f0dd",
+        "order": 1,
+        "width": 27,
+        "height": 15,
+        "label": "Dati",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "150",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1160,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "999d97aa03581558",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "BPM",
+        "func": "let msg1 = {};\nmsg1.topic = \"BPM\";\nmsg1.payload = msg.payload[\"BPM\"];\n\nlet msg2 = {};\nmsg2.topic = \"SpO2\";\nmsg2.payload = msg.payload[\"SpO2\"];\n\nlet msg3 = {};\nmsg3.topic = \"HRV\";\nmsg3.payload = msg.payload[\"HRV\"];\n\nlet msg4 = {};\nmsg4.topic = \"Umidità\";\nmsg4.payload = msg.payload[\"Umidita\"];\n\nlet msg5 = {};\nmsg5.topic = \"Temperatura\";\nmsg5.payload = msg.payload[\"Temperatura\"];\n\nlet msg6 = {};\nmsg6.topic = \"Indice di calore\";\nmsg6.payload = msg.payload[\"Indice_calore\"];\n\nlet msg7 = null;\nif (msg.payload[\"Valori_0\"]){\n    msg7 = {};\n    msg7.topic = \"Errore\";\n    msg7.payload = \"Sono stati rilevati dei valori a 0\";\n}\n\nreturn [msg1, msg2, msg3, msg4, msg5, msg6, msg7];\n",
+        "outputs": 7,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 980,
+        "wires": [
+            [
+                "33bff03752bf7804"
+            ],
+            [
+                "33bff03752bf7804"
+            ],
+            [
+                "33bff03752bf7804"
+            ],
+            [
+                "33bff03752bf7804"
+            ],
+            [
+                "33bff03752bf7804"
+            ],
+            [
+                "33bff03752bf7804"
+            ],
+            [
+                "572d0baef7460c3f"
+            ]
+        ]
+    },
+    {
+        "id": "7c8f8b2927a725ab",
+        "type": "ui_button",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Pulisci grafico",
+        "group": "2b2774b436b5f0dd",
+        "order": 4,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "Pulisci grafico",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 780,
+        "y": 1080,
+        "wires": [
+            [
+                "33bff03752bf7804"
+            ]
+        ]
+    },
+    {
+        "id": "0d1a81cf7d5126d7",
+        "type": "ui_form",
+        "z": "97d477c7a162193f",
+        "g": "8287941ff8a40d9a",
+        "name": "Seleziona date",
+        "label": "",
+        "group": "166f1d827fd79421",
+        "order": 2,
+        "width": 13,
+        "height": 1,
+        "options": [
+            {
+                "label": "Da (giorno):",
+                "value": "Data_inizio",
+                "type": "date",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "A (giorno):",
+                "value": "Data_fine",
+                "type": "date",
+                "required": false,
+                "rows": null
+            },
+            {
+                "label": "Dalle (ora):",
+                "value": "Ora_inizio",
+                "type": "time",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Alle (ora):",
+                "value": "Ora_fine",
+                "type": "time",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Data_inizio": "",
+            "Data_fine": "",
+            "Ora_inizio": "",
+            "Ora_fine": ""
+        },
+        "payload": "",
+        "submit": "Conferma",
+        "cancel": "Cancella",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": true,
+        "className": "",
+        "x": 240,
+        "y": 520,
+        "wires": [
+            [
+                "cfbe0cb14f296412",
+                "94bc25cf07e9a534"
+            ]
+        ]
+    },
+    {
+        "id": "cfbe0cb14f296412",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "8287941ff8a40d9a",
+        "name": "Query",
+        "func": "let data_inizio;\nif (msg.payload[\"Data_inizio\"] == null)\n        data_inizio = new Date();\nelse{\n        data_inizio = new Date(msg.payload[\"Data_inizio\"]);\n        data_inizio.setDate(data_inizio.getDate() + 1);\n}\nlet str_data_inizio = data_inizio.toISOString().slice(0, 10); \n\n\nlet data_fine;\nif (msg.payload[\"Data_fine\"] == null)\n        data_fine = new Date();\nelse{\n        data_fine = new Date(msg.payload[\"Data_fine\"]);\n        data_fine.setDate(data_fine.getDate() + 1);\n}\nlet str_data_fine = data_fine.toISOString().slice(0, 10);\n\nlet ora_inizio = new Date(msg.payload[\"Ora_inizio\"])\nora_inizio.setHours(ora_inizio.getHours() + 1);\nlet str_ora_inizio = ora_inizio.toISOString().slice(11, 19);\n\nlet ora_fine = new Date(msg.payload[\"Ora_fine\"])\nora_fine.setHours(ora_fine.getHours() + 1);\nlet str_ora_fine = ora_fine.toISOString().slice(11, 19);\n\nmsg = {}\nmsg.topic = `SELECT BPM, SpO2, HRV, Ora_misurazione FROM Info\n        WHERE Ora_misurazione >= \"${str_data_inizio} ${str_ora_inizio}\" AND Ora_misurazione <= \"${str_data_fine} ${str_ora_fine}\"`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 520,
+        "wires": [
+            [
+                "c958d4e425ac0bb9"
+            ]
+        ]
+    },
+    {
+        "id": "c958d4e425ac0bb9",
+        "type": "mysql",
+        "z": "97d477c7a162193f",
+        "g": "8287941ff8a40d9a",
+        "mydb": "d62b411c865605bd",
+        "name": "DB_PCTO",
+        "x": 690,
+        "y": 520,
+        "wires": [
+            [
+                "970772522fc1cb48"
+            ]
+        ]
+    },
+    {
+        "id": "970772522fc1cb48",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "8287941ff8a40d9a",
+        "name": "Dividi dati",
+        "func": "for (let i = 0; i < msg.payload.length; i++){\n    let tmp_msg = [];\n    let date = Math.floor(msg.payload[i][\"Ora_misurazione\"].getTime())\n\n    let point1 = {};\n    point1.topic = \"BPM\";\n    point1.payload = msg.payload[i][\"BPM\"];\n    point1.timestamp = date;\n    tmp_msg.push(point1);\n\n    let point2 = {};\n    point2.topic = \"SpO2\";\n    point2.payload = msg.payload[i][\"SpO2\"];\n    point2.timestamp = date;\n    tmp_msg.push(point2);\n\n    let point3 = {};\n    point3.topic = \"HRV\";\n    point3.payload = msg.payload[i][\"HRV\"];\n    point3.timestamp = date;\n    tmp_msg.push(point3);\n\n    node.send(tmp_msg);\n}\nnode.done();\n\nreturn;",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 520,
+        "wires": [
+            [
+                "546fd44e5ff21a7a"
+            ],
+            [
+                "546fd44e5ff21a7a"
+            ],
+            [
+                "546fd44e5ff21a7a"
+            ]
+        ]
+    },
+    {
+        "id": "94bc25cf07e9a534",
+        "type": "ui_button",
+        "z": "97d477c7a162193f",
+        "g": "8287941ff8a40d9a",
+        "name": "Pulisci grafico",
+        "group": "166f1d827fd79421",
+        "order": 6,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "label": "Pulisci grafico",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 920,
+        "y": 600,
+        "wires": [
+            [
+                "546fd44e5ff21a7a"
+            ]
+        ]
+    },
+    {
+        "id": "572d0baef7460c3f",
+        "type": "ui_toast",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "red",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Valori 0 notifica",
+        "x": 1180,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "064816db606638a6",
+        "type": "function",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "Valori a 0",
+        "func": "msg.payload = {\n    \"Dito\": true,\n    \"BPM\": 0,\n    \"SpO2\": 0,\n    \"Umidita\": 38,\n    \"Temperatura\": 22.6,\n    \"Indice_calore\": 21.91,\n    \"HRV\": 47,\n    \"i_HRV\": 93\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 860,
+        "wires": [
+            [
+                "dca7b386f14c82fe"
+            ]
+        ]
+    },
+    {
+        "id": "03a231de7a60dc13",
+        "type": "inject",
+        "z": "97d477c7a162193f",
+        "g": "2b060c409377ea39",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 860,
+        "wires": [
+            [
+                "064816db606638a6"
+            ]
+        ]
+    },
+    {
+        "id": "546fd44e5ff21a7a",
+        "type": "ui_chart",
+        "z": "97d477c7a162193f",
+        "g": "8287941ff8a40d9a",
+        "name": "Storico",
+        "group": "166f1d827fd79421",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Storico fisiologico",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "150",
+        "removeOlder": 1,
+        "removeOlderPoints": "300",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1160,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "042c466475e7dfff",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "1a72a9e6cff72716",
+        "order": 1,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "0b34dc9f78249f1c",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "5565465bf4a48846",
+        "order": 1,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "52aac7f8c74757fc",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "5565465bf4a48846",
+        "order": 3,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "2b82f7605e530c9f",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "5565465bf4a48846",
+        "order": 4,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "473c41253651d9ba",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "5565465bf4a48846",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "485d896faad8625c",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "5565465bf4a48846",
+        "order": 7,
+        "width": 5,
+        "height": 1
+    },
+    {
+        "id": "abd745eeb648a24a",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "2b2774b436b5f0dd",
+        "order": 2,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "70c942c59a8e77e6",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "2b2774b436b5f0dd",
+        "order": 3,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "bde9015b9c3ea8d6",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "2b2774b436b5f0dd",
+        "order": 5,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "b08f8a0e2979774e",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "166f1d827fd79421",
+        "order": 1,
+        "width": 7,
+        "height": 1
+    },
+    {
+        "id": "188db929011007fc",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "166f1d827fd79421",
+        "order": 3,
+        "width": 7,
+        "height": 1
+    },
+    {
+        "id": "68279c859da080b3",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "166f1d827fd79421",
+        "order": 5,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "285d22fe6728c74d",
+        "type": "ui_spacer",
+        "z": "97d477c7a162193f",
+        "name": "spacer",
+        "group": "166f1d827fd79421",
+        "order": 7,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "2bcfd047bffa8532",
+        "type": "serial-port",
+        "name": "MAX30102",
+        "serialport": "COM4",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "d62b411c865605bd",
+        "type": "MySQLdatabase",
+        "name": "PCTO",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "DB_PCTO",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "1a72a9e6cff72716",
+        "type": "ui_group",
+        "name": "Inserisci utente",
+        "tab": "21cbdbfaf66871f3",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5565465bf4a48846",
+        "type": "ui_group",
+        "name": "Seleziona utente",
+        "tab": "21cbdbfaf66871f3",
+        "order": 2,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2b2774b436b5f0dd",
+        "type": "ui_group",
+        "name": "Grafico",
+        "tab": "e2792d3e0450c0da",
+        "order": 1,
+        "disp": true,
+        "width": "27",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "166f1d827fd79421",
+        "type": "ui_group",
+        "name": "Seleziona date",
+        "tab": "f78e66b42db4961f",
+        "order": 1,
+        "disp": true,
+        "width": "27",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "21cbdbfaf66871f3",
+        "type": "ui_tab",
+        "name": "Utente",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e2792d3e0450c0da",
+        "type": "ui_tab",
+        "name": "Grafico",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f78e66b42db4961f",
+        "type": "ui_tab",
+        "name": "Storico",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
