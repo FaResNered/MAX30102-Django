@@ -1,0 +1,4 @@
+django==5.0.3
+pyserial==3.5
+yagmail==0.15.293
+pytz==2024.1
