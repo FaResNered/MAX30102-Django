@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>
+      Sensor dashboard
+    </title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js" charset="utf-8"></script>
+  </head>
+  <body class="preload">
+    <header>
+      <span class="logo"> Dashboard </span>
+      <ul class="menu">
+        <a href="../home"><li>Home</li></a>
+        <a href=""><li>History</li></a>
+        <a href="../health"><li>Health</li></a>
+      </ul>
+    </header>
+    <div id="page">
+      <h1 class="title"> Physiological History </h1>
+      <form class="date-form">
+        <span>From:</span>
+        <input type="date" name="data-inizio" id="data-inizio" class="data-ora">
+        <input type="time" name="ora-inizio" id="ora-inizio" class="data-ora">
+        
+        <span>To:</span>
+        <input type="date" name="data-fine" id="data-fine" class="data-ora">
+        <input type="time" name="ora-fine" id="ora-fine" class="data-ora">
+
+        <input type="button" name="create-chart" id="create-chart" onclick="createChart()" value="Create chart">
+        
+      </form>
+      <div id="container-chart">
+      </div>
+    </div>
+  </body>
+  <script language="javascript" type="text/javascript" src="{% static 'js/history.js' %}"></script>
+</html>

@@ -1,0 +1,111 @@
+/*Preset body*/
+body{
+  margin: 0;
+  background-color: #4EA685;
+  font-family: 'Times New Roman', 'Arial';
+}
+
+header{
+  display: grid;
+  color: white;
+  height: 5em;
+}
+
+header a{
+  text-decoration: none !important;
+  color: white;
+  cursor: pointer;
+}
+
+header a:hover{
+  color: lightgrey;
+}
+
+/*Scritta petsparadise*/
+.logo{
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  font-family: Arial;
+  font-size: 2em;
+  padding: 0.7em 0.5em 0 0.5em;
+  z-index: 1;
+}
+
+/*Background menu*/
+.menu{
+  position: relative;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  list-style: none;
+  font-size: 1.1em;
+  padding-right: 4em;
+}
+
+.menu li{
+  position: relative;
+  padding: 1em;
+}
+
+#page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 1em 1em 0 0;
+  min-height: calc(100vh - 5em);
+}
+
+.title{
+  padding-bottom: 3%;
+}
+
+#container-chart{
+  display: block;
+  width: 90%;
+  aspect-ratio: 16 / 10;
+  max-height: 700px;
+}
+
+.date-form{
+  display: grid;
+  margin-top: 2%;
+  width: 70%;
+  grid-template-columns: 0.1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 5%;
+  row-gap: 20%;
+  margin-bottom: 10%;
+}
+
+.date-form span{
+  display: flex;
+  font-size: 1.8em;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-ora{
+  padding: 5%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: lightgreen solid;
+  text-decoration: none;
+}
+
+#create-chart{
+  font-size: 1.8em;
+  grid-column: span 3;
+  background-color: lightgreen;
+  border: grey solid;
+  border-radius: 10px;
+}
+
+#create-chart:hover{
+  background-color: rgb(134, 212, 134);
+}

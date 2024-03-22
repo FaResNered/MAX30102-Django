@@ -1,0 +1,60 @@
+{% load static %}
+<html>
+  <head>
+    <title>
+      Sensor dashboard
+    </title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/health.css' %}">
+    <link rel="stylesheet" href="{% static 'css/switch.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js" charset="utf-8"></script>
+  </head>
+  <body class="preload">
+    <header>
+      <span class="logo"> Dashboard </span>
+      <ul class="menu">
+        <a href="../home"><li>Home</li></a>
+        <a href="../history"><li>History</li></a>
+        <a href=""><li>Health</li></a>
+      </ul>
+    </header>
+    <div id="page">
+      <h1 class="title">Health gauge charts</h1>
+      <span id="switch-label">Turn on the switch and place your finger on it to start measuring</span>
+
+      <label class="switch">
+        <input type="checkbox" id="switchData" onclick="switchClick()">
+        <span class="slider round"></span>
+      </label>
+
+      <section class="chart-group">
+
+        <div id="BPM-group" class="group">
+          <div id="BPM-chart" class="chart">
+          </div>
+          <span id="BPM-text" class="text-chart">BPM: 0</span>
+        </div>
+
+        <div id="SpO2-group" class="group">
+          <div id="SpO2-chart" class="chart">
+          </div>
+          <span id="SpO2-text" class="text-chart">SpO2: 0</span>
+        </div>
+
+        <div id="HRV-group" class="group">
+          <div id="HRV-chart" class="chart">
+          </div>
+          <span id="HRV-text" class="text-chart">HRV: 0</span>
+        </div>
+
+      </section>
+    </div>
+  </body>
+  <script language="javascript" type="text/javascript" src="{% static 'js/health.js' %}"></script>
+</html>

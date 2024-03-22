@@ -1,0 +1,62 @@
+{% load static %}
+<html>
+  <head>
+    <title>
+      Sensor dashboard
+    </title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/switch.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.30.0.min.js" charset="utf-8"></script>
+  </head>
+  <body class="preload">
+    <header>
+      <span class="logo"> Dashboard </span>
+      <ul class="menu">
+        <a href=""><li>Home</li></a>
+        <a href="../history"><li>History</li></a>
+        <a href="../health"><li>Health</li></a>
+      </ul>
+    </header>
+    <div id="page">
+      <h1 class="title">Hi, {{ user }}</h1>
+
+      <span id="sensore-valore">
+        Turn on the switch and place your finger on it to start measuring
+      </span>
+
+      <label class="switch">
+        <input type="checkbox" id="switchData" onclick="switchClick()">
+        <span class="slider round"></span>
+      </label>
+
+      <div id="container-chart">
+      </div>
+
+      <div class="container-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Time</th>
+              <th scope="col">BPM</th>
+              <th scope="col">SpO2</th>
+              <th scope="col">HRV</th>
+              <th scope="col">Temperature</th>
+              <th scope="col">Humidity</th>
+              <th scope="col">Heat index</th>
+            </tr>
+          </thead>
+          <tbody id="dynamic-body">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script language="javascript" type="text/javascript" src="{% static 'js/main.js' %}"></script>
+</html>
