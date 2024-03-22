@@ -1,3 +1,18 @@
+/*
+This code is an Arduino sketch designed to monitor various physiological
+parameters like heart rate (BPM), oxygen saturation (SpO2), humidity,
+and temperature using sensors such as MAX30102 (for pulse oximetry) and DHT11
+(for temperature and humidity). Additionally, it includes functionality for
+Heart Rate Variability (HRV) calculation.
+
+Here's a breakdown of the main functionalities:
+- Initialization: The setup function initializes the required pins, serial communication, sensors, and file system for writing data to an SD card.
+- HRV Calculation: The code calculates Heart Rate Variability (HRV) based on the time intervals between successive heartbeats.
+- Data Logging: The data collected from the sensors is logged onto an SD card in a CSV format, including BPM, SpO2, HRV, humidity, and temperature.
+- Button Control: A push-button is used to toggle a buzzer on or off, likely for some form of user feedback or indication.
+- Main Loop: In the loop function, the code continuously updates sensor readings, checks for button presses, calculates HRV, and logs data to the SD card at regular intervals.
+*/
+
 #include <Wire.h>
 #include "MAX30102_PulseOximeter.h"
 #include "DHT.h"
@@ -12,11 +27,13 @@
 #define DHTTYPE DHT11
 #define BUZZERPIN 10
 #define MAX_BUFFER 65535
+
 // PulseOximeter is the higher level interface to the sensor
 // it offers:
 //  * beat detection reporting
 //  * heart rate calculation
 //  * SpO2 (oxidation level) calculation 
+
 PulseOximeter pox;
 DHT dht(DHTPIN, DHTTYPE);
 FatFsSD fs;
@@ -32,7 +49,6 @@ int i_filename = 0;
 char data[] = "data_";
 char estensione[] = ".csv";
 char filename[20];
-//char filename_char[20];
 char absolute_filename[128];
 char buf[MAX_BUFFER];
 
@@ -111,6 +127,7 @@ void setup()
   Serial.begin(115200);
   Serial.print("Initializing... ");
   delay(3000);
+  
   // Initialize the PulseOximeter instance
   if (!pox.begin()) {
       Serial.println("FAILED");
